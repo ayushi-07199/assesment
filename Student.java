@@ -1,49 +1,40 @@
-package test;
 
-import java.util.Objects;
+package setstudent;
 
 public class Student {
+    private int rollno;
+    private String name;
+    private int age;
+    public Student(int rollno,String name,int age)
+    {
+        this.rollno=rollno;
+        this.name=name;
+        this.age=age;
+    }
+    public Student()
+    {
+        this(1,"A",18);
+    }
 
-	private int age;
-	private String rollno;
-	
-	
-	public Student(int age,String rollno) {
-		this.age=age;
-		this.rollno=rollno;
-		
-	}
-	
-	public Student() {
-		this(00,"");
-	}
+    public int getRollno() {
+        return rollno;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getRollno() {
-		return rollno;
-	}
-
-	public void setRollno(String rollno) {
-		this.rollno = rollno;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Student)) {
-			return false;
-		}
-		Student other = (Student) obj;
-		return age == other.age && Objects.equals(rollno, other.rollno);
-	}
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

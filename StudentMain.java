@@ -1,60 +1,43 @@
-package test;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
+package setstudent;
+import java.util.*;
 
 public class StudentMain {
+    Map<String,Student> studentmap=new HashMap<>();
+    Set<Integer>evenage=new HashSet<>();
+    Set<Integer>oddage=new HashSet<>();
+    List<Integer>rollnumber=new ArrayList<>();
+    public static void main(String[] args) {
+        StudentMain stuobj=new StudentMain();
+        stuobj.app();
+    }
+    public void app()
+    {
+        Student student1=new Student(51,"vineel",22);
+        Student student2=new Student(50,"rudrapati",24);
+        Student student3=new Student(51,"leo",27);
+        Student student4=new Student(50,"david",28);
+        Student student5=new Student(51,"mathew",29);
+        Student student6=new Student(50,"smith",31);
+        studentmap.put(student1.getName(),student1);
+        studentmap.put(student2.getName(),student2);
+        studentmap.put(student3.getName(),student3);
+        studentmap.put(student4.getName(),student4);
+        studentmap.put(student5.getName(),student5);
+        studentmap.put(student6.getName(),student6);
+        for(String itervar:studentmap.keySet())
+        {
+            Student data=studentmap.get(itervar);
+            int age= data.getAge();
+            int roll=data.getRollno();
+            if(age%2==0)
+            {
 
-	Set<Student> set = new HashSet<Student>();
-	
-	
-	public static void main(String[] args) {
-		StudentMain demo = new StudentMain();
-		demo.runApp();
+                evenage.add(age);
+            }
+            else {
+                oddage.add(age);
+            }
+        }
+        
+    }
 }
-	
-	
-
-public  void runApp() {
-	Student s1=new Student(22,"A11");
-	set.add(s1);
-	Student s2=new Student(23,"A13");
-	set.add(s2);
-	Student s3=new Student(20,"A12");
-	set.add(s3);
-	Student s4=new Student(21,"A14");
-	set.add(s4);
-
-	Iterator<Student> iterator=set.iterator();
-	  
-	   while(iterator.hasNext()) {		 
-			Student student = iterator.next();
-			System.out.println("Age=" + student.getAge() + " " + "Rollno"+ student.getRollno());
-		  
-	   }
-	   
-	   
-	  
-	
-	display(studentage);
-}
-	   
-	   
-	   private void display(Set <Student> studentage) {
-			for (Student stobject : studentage) {
-				int age=stobject.getAge();
-				if(age>21)
-				{
-				System.out.println(age);
-			}
-		}
-
-
-	
-}
-
-}
-
